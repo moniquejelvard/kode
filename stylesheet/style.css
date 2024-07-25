@@ -22,6 +22,48 @@ body {
   margin-left: 8rem;
 }
 
+/*--LANGUAGE SWITCHER--*/
+.language-switcher {
+  background-color: var(--baggrund);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 3rem;
+  border-radius: 5px;
+  border: solid 1px var(--lysbrun);
+}
+
+.language-switcher a {
+  text-decoration: none;
+  color: var(--lysbrun);
+  font-family: Helvetica, sans-serif;
+  background-color: var(--baggrund);
+  padding: 0.5rem;
+  border-radius: 5px;
+  position: relative; /* For at kunne positionere pseudo-elementet */
+}
+
+/* Tilføj en streg med pseudo-element */
+.language-switcher a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  height: 70%; /* Juster højden på stregen */
+  width: 1px;
+  background-color: var(--lysbrun);
+  transform: translateY(-50%); /* Centrer stregen vertikalt */
+}
+
+/* Fjern streg for det sidste link */
+.language-switcher a:last-child::after {
+  display: none;
+}
+
+.language-switcher a:hover {
+  background-color: var(--morkbrun);
+  color: var(--lys);
+}
+
 /*--NAVIGATION--*/
 .navigation {
   width: 100%;
