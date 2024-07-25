@@ -14,70 +14,97 @@
     />
   </head>
   <body>
-      <header class="navigation">
-        <div class="logo">
-          <a href="index.html">
-            <img src="/img/logo_web.svg" alt="logo" />
-          </a>
+    <header class="navigation">
+      <div class="logo">
+        <a href="index.html">
+          <img src="/img/logo_web.svg" alt="logo" />
+        </a>
+      </div>
+
+      <div class="burger-menu" id="burger-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+
+      <nav class="nav" id="nav">
+        <ul class="nav-links">
+          <li><a href="behandlinger.html">Behandlinger</a></li>
+          <li><a href="produkter.html">Produkter</a></li>
+          <li><a href="info.html">Info</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+
+        <div class="social-links">
+          <a
+            href="https://www.facebook.com/Nyhairsalon/photos_by"
+            target="_blank"
+            class="social-icon facebook"
+            aria-label="Facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/newyorkhairsalon_dk/"
+            target="_blank"
+            class="social-icon instagram"
+            aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
         </div>
 
-        <div class="burger-menu" id="burger-menu">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
+        <div class="nav-button">
+          <a href="https://new-york-hair-salon.planway.com/">Booking</a>
         </div>
+      </nav>
+    </header>
 
-        <nav class="nav" id="nav">
-          <ul class="nav-links">
-            <li><a href="behandlinger.html">Behandlinger</a></li>
-            <li><a href="produkter.html">Produkter</a></li>
-            <li><a href="info.html">Info</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-          </ul>
-
-          <div class="social-links">
-            <a
-              href="https://www.facebook.com/Nyhairsalon/photos_by"
-              target="_blank"
-              class="social-icon facebook"
-              aria-label="Facebook"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a
-              href="https://www.instagram.com/newyorkhairsalon_dk/"
-              target="_blank"
-              class="social-icon instagram"
-              aria-label="Instagram"
-              ><i class="fab fa-instagram"></i
-            ></a>
-          </div>
-
-          <div class="nav-button">
+    <main>
+      <div class="grid1">
+        <div class="grid1_items">
+          <h3>VELKOMMEN HOS</h3>
+          <h1>NEW YORK</h1>
+          <h2>HAIR SALON</h2>
+          <div class="button">
             <a href="https://new-york-hair-salon.planway.com/">Booking</a>
           </div>
-        </nav>
-      </header>
-
-      <main>
-        <div class="grid1_1">
-          <div class="grid1_1_items">
-            <h3>VELKOMMEN HOS</h3>
-            <h1>NEW YORK</h1>
-            <h2>HAIR SALON</h2>
-            <div class="button">
-              <a href="https://new-york-hair-salon.planway.com/">Booking</a>
-            </div>
-          </div>
-          <div>
-            <img src="img/salon.webp" alt="Salonen" />
-          </div>
         </div>
-      </main>
+        <div>
+          <img src="img/salon.webp" alt="Salonen" />
+        </div>
+      </div>
+
+      <h4 class="margin-left">OM NEW YORK HAIR SALON</h4>
+      <div class="grid2">
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            dignissim nibh et dui faucibus venenatis. Nunc vehicula, libero
+            vehicula fringilla dapibus, tortor tellus molestie tortor, vitae
+            dignissim velit ipsum eu elit. Duis vulputate sodales urna, sit amet
+            congue tortor rutrum sit amet. Nulla rhoncus convallis pulvinar. In
+            rutrum tempor imperdiet. Aenean dapibus iaculis nisl at egestas.
+            <br /><br />
+            Aliquam erat volutpat. Suspendisse dignissim, nulla et venenatis
+            rhoncus, justo sapien vestibulum tellus, ut condimentum velit augue
+            id neque. Sed in tristique lectus. Praesent ante arcu, consequat
+            tempor lectus lacinia, fringilla rhoncus est. Etiam vitae eros urna.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+            consequat nisi a mauris posuere facilisis. Morbi odio tellus, rutrum
+            gravida bibendum rutrum, aliquam pellentesque metus.
+          </p>
+        </div>
+
+        <div class="image-container">
+          <img src="img/salonlys.webp" alt="Salonen" />
+        </div>
+      </div>
+    </main>
 
     <footer>
       <div class="footer-content">
         <div class="footer-left">
-          <p><strong>Adresse:</strong></p>
+          <strong>Adresse:</strong>
+          <br />
           <a
             href="https://www.google.com/maps/place/Brog%C3%A5rdsvej+20,+kld.+2820+Gentofte"
             target="_blank"
@@ -87,7 +114,8 @@
           </a>
         </div>
         <div class="footer-middle">
-          <p><strong>Kontakt:</strong></p>
+          <strong>Kontakt:</strong>
+          <br />
           <a href="tel:+4593929793" class="footer-link">+45 93 92 97 93</a>
           <br />
           <a href="mailto:info@newyorkhairsalon.dk" class="footer-link"
