@@ -337,8 +337,13 @@ p {
     margin-right: 0rem;
   }
 
+  .logo img {
+    margin-left: 2rem;
+  }
+
   .burger-menu {
     display: flex;
+    margin-right: 2rem;
   }
 
   nav {
@@ -442,7 +447,7 @@ p {
   }
 
   .grid2 img {
-    max-width: 100%; /* Billederne fylder op til 100% af kolonnens bredde */
+    width: 100%; /* Billederne fylder op til 100% af kolonnens bredde */
     height: auto; /* Bevarer billedets proportioner */
   }
 
@@ -470,6 +475,18 @@ p {
     align-items: center;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+  }
+
+  .logo img {
+    margin-left: 0;
+  }
+
+  .nav-links {
+    margin-left: 0;
+  }
+
+  .nav-button {
+    margin-right: 0;
   }
 
   .footer-content {
@@ -533,7 +550,7 @@ p {
   }
 
   .grid2 img {
-    max-width: 100%; /* Billederne fylder op til 100% af kolonnens bredde */
+    width: 100%; /* Billederne fylder op til 100% af kolonnens bredde */
     height: auto; /* Bevarer billedets proportioner */
   }
 
