@@ -430,6 +430,7 @@ p {
   .grid1 {
     grid-template-columns: 1fr;
     row-gap: 2rem;
+    padding: 2rem 0rem;
   }
 
   h1 {
