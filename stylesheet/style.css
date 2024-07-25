@@ -415,7 +415,7 @@ p {
 
   h1 {
     font-size: 60px;
-    white-space: no-wrap;
+    white-space: nowrap;
   }
 
   h2 {
