@@ -28,8 +28,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-left: 3rem;
-  border-radius: 5px;
-  border: solid 1px var(--lysbrun);
 }
 
 .language-switcher a {
@@ -38,7 +36,6 @@ body {
   font-family: Helvetica, sans-serif;
   background-color: var(--baggrund);
   padding: 0.5rem;
-  border-radius: 5px;
   position: relative; /* For at kunne positionere pseudo-elementet */
 }
 
@@ -48,7 +45,7 @@ body {
   position: absolute;
   right: 0;
   top: 50%;
-  height: 70%; /* Juster højden på stregen */
+  height: 60%; /* Juster højden på stregen */
   width: 1px;
   background-color: var(--lysbrun);
   transform: translateY(-50%); /* Centrer stregen vertikalt */
@@ -60,7 +57,6 @@ body {
 }
 
 .language-switcher a:hover {
-  background-color: var(--morkbrun);
   color: var(--lys);
 }
 
@@ -93,7 +89,7 @@ nav {
   list-style: none;
   display: flex;
   flex: 1;
-  margin-left: 4rem;
+  margin-left: 3rem;
 }
 
 .nav-links li {
@@ -371,11 +367,15 @@ p {
 }
 
 /*------------- MOBIL-------------*/
-@media (max-width: 768px) {
+@media (max-width: 924px) {
   .social-links {
     margin-top: 10px;
     margin-bottom: 10px;
     margin-right: 0rem;
+  }
+
+  .language-switcher {
+    margin-left: 0;
   }
 
   .logo img {
@@ -532,7 +532,7 @@ p {
 }
 
 /*-------------TABLET-------------*/
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 925px) and (max-width: 1200px) {
   .navigation {
     flex-direction: column;
     align-items: center;
@@ -541,6 +541,10 @@ p {
   }
 
   .logo img {
+    margin-left: 0;
+  }
+
+  .language-switcher {
     margin-left: 0;
   }
 

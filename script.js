@@ -6,47 +6,44 @@ document.addEventListener("DOMContentLoaded", function () {
     nav.classList.toggle("active");
     burgerMenu.classList.toggle("toggle");
   });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
   const languageLinks = document.querySelectorAll(".lang-link");
   const elementsToTranslate = document.querySelectorAll(
     "[data-lang-da], [data-lang-en]"
   );
 
+  function applyLanguage(selectedLang) {
+    elementsToTranslate.forEach((element) => {
+      const langDa = element.getAttribute("data-lang-da");
+      const langEn = element.getAttribute("data-lang-en");
+      if (selectedLang === "da") {
+        element.textContent = langDa || element.textContent;
+      } else if (selectedLang === "en") {
+        element.textContent = langEn || element.textContent;
+      }
+    });
+
+    // Update active class
+    languageLinks.forEach((link) => {
+      if (link.getAttribute("data-lang") === selectedLang) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  }
+
   languageLinks.forEach((link) => {
     link.addEventListener("click", function (event) {
-      event.preventDefault(); // Forhindrer standard linkadfærd
+      event.preventDefault(); // Prevent default link behavior
       const selectedLang = this.getAttribute("data-lang");
-
-      elementsToTranslate.forEach((element) => {
-        const langDa = element.getAttribute("data-lang-da");
-        const langEn = element.getAttribute("data-lang-en");
-        if (selectedLang === "da") {
-          element.textContent = langDa || element.textContent;
-        } else if (selectedLang === "en") {
-          element.textContent = langEn || element.textContent;
-        }
-      });
-
-      // Opdater aktiv klasse
-      languageLinks.forEach((link) => {
-        if (link.getAttribute("data-lang") === selectedLang) {
-          link.classList.add("active");
-        } else {
-          link.classList.remove("active");
-        }
-      });
+      localStorage.setItem("preferredLanguage", selectedLang);
+      applyLanguage(selectedLang);
     });
   });
 
   // Initial language setup
-  const currentLang = document.documentElement.lang;
-  languageLinks.forEach((link) => {
-    if (link.getAttribute("data-lang") === currentLang) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
-  });
+  const savedLang = localStorage.getItem("preferredLanguage");
+  const initialLang = savedLang ? savedLang : document.documentElement.lang;
+  applyLanguage(initialLang);
 });
