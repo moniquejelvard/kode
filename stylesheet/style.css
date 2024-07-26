@@ -380,6 +380,7 @@ p {
 
   .logo img {
     margin-left: 2rem;
+    margin-bottom: 0;
   }
 
   .burger-menu {
@@ -542,6 +543,7 @@ p {
 
   .logo img {
     margin-left: 0;
+    margin-bottom: 2rem;
   }
 
   .language-switcher {
