@@ -500,6 +500,144 @@ p {
   font-size: 12.5px;
 }
 
+/*--KONTAKT--*/
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.button-light {
+  display: flex;
+  align-items: center;
+}
+
+.button-light a {
+  padding: 10px 40px;
+  background-color: var(--lysbrun);
+  color: var(--lys);
+  text-decoration: none;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-family: Helvetica, sans-serif;
+  letter-spacing: 0.1rem;
+}
+
+.button-light a:hover {
+  background-color: var(--morkbrun);
+}
+
+.social-links-light {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.social-icon-light {
+  color: var(--lysbrun);
+  font-size: 25px; /* Size of the social icons */
+  text-decoration: none;
+}
+
+.social-icon-light.instagram {
+  font-size: 30px; /* Slightly larger Instagram icon */
+  margin-left: 0.8rem;
+}
+
+.social-icon-light:hover {
+  color: var(--lysbrun);
+}
+
+.grid5-container {
+  display: flex;
+  justify-content: center; /* Center grid horizontally */
+  align-items: center; /* Center grid vertically */
+}
+
+.grid5 {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 2rem;
+  margin: 3rem 0;
+  align-items: center;
+}
+
+.michelle {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.grid5 img {
+  width: 100%;
+  height: auto;
+}
+
+.grid5 div img {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.grid5 a {
+  text-decoration: none;
+  color: var(--lys);
+}
+
+.grid5 a:hover {
+  text-decoration: underline;
+}
+
+.kontaktinfo p {
+  margin-bottom: 1rem;
+}
+
+.open h4 {
+  margin-top: 2rem;
+}
+
+.open p {
+  margin: 0;
+}
+
+.adresse,
+.adresse a {
+  text-decoration: none;
+  color: var(--lys);
+  font-family: Helvetica, sans-serif;
+}
+
+.adresse a:hover {
+  text-decoration: underline;
+}
+
+.grid6 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0 5rem;
+  margin-bottom: 8rem;
+  column-gap: 8rem;
+}
+
+.map-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.afbud p {
+  margin-bottom: 1rem;
+}
 /*------------- MOBIL-------------*/
 @media (max-width: 924px) {
   .social-links {

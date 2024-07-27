@@ -1,4 +1,3 @@
-/*-------BURGERMENU-------*/
 document.addEventListener("DOMContentLoaded", function () {
   const burgerMenu = document.getElementById("burger-menu");
   const nav = document.getElementById("nav");
@@ -19,9 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const langDa = element.getAttribute("data-lang-da");
       const langEn = element.getAttribute("data-lang-en");
       if (selectedLang === "da") {
-        element.textContent = langDa || element.textContent;
+        element.innerHTML = langDa || element.innerHTML;
       } else if (selectedLang === "en") {
-        element.textContent = langEn || element.textContent;
+        element.innerHTML = langEn || element.innerHTML;
       }
     });
 
