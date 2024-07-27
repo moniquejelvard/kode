@@ -593,6 +593,7 @@ p {
   h1 {
     font-size: 60px;
     white-space: nowrap;
+    margin: 0;
   }
 
   h2 {
@@ -645,6 +646,11 @@ p {
     line-height: 1.5rem;
   }
   /*--BEHANDLINGER--*/
+  .overskrift {
+    margin: 0;
+    font-size: 30px;
+  }
+
   .behandlingtekst {
     margin: 3rem 2rem;
   }
