@@ -378,32 +378,45 @@ p {
   align-items: center;
   text-align: center;
 }
-.grid3 {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin: 0 5rem;
-  gap: 3rem;
-}
 
 .behandlingtekst {
   margin: 4rem 15rem;
 }
 
-.pris-sektion li {
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0 5rem;
+  gap: 4rem;
+}
+
+.klip {
+  display: flex;
+  flex-direction: column;
+}
+
+.behandlinger {
+  margin-bottom: 2rem;
+  list-style-type: none;
+}
+
+.behandlinger li {
   color: var(--lys);
   font-family: Helvetica, sans-serif;
   font-size: 15px;
-  margin-bottom: 0.7rem;
-  list-style-type: none;
+  margin-bottom: 0.5rem;
   letter-spacing: 1px;
-}
-
-.pris-sektion {
-  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* border-bottom: solid 0.5px var(--lysbrun); */
 }
 
 .details {
-  font-style: italic;
+  font-size: 12px;
+}
+
+.price {
+  text-align: right;
 }
 
 /*------------- MOBIL-------------*/
@@ -557,7 +570,6 @@ p {
 
   h4 {
     font-family: "Times New Roman", Times, serif;
-    font-weight: 1000;
     font-size: 25px;
     color: var(--lysbrun);
     margin-bottom: 0.5rem;
@@ -569,6 +581,25 @@ p {
     font-size: 15px;
     color: var(--lys);
     line-height: 1.5rem;
+  }
+  /*--BEHANDLINGER--*/
+  .behandlingtekst {
+    margin: 3rem 2rem;
+  }
+
+  .grid3 {
+    grid-template-columns: 1fr;
+    margin: 0 2rem;
+    gap: 0;
+  }
+
+  .behandlinger li {
+    grid-template-columns: 2fr 1fr;
+    column-gap: 1.5rem;
+  }
+
+  .price {
+    text-align: left;
   }
 }
 
@@ -665,7 +696,6 @@ p {
 
   h4 {
     font-family: "Times New Roman", Times, serif;
-    font-weight: 100;
     font-size: 25px;
     color: var(--lysbrun);
     margin-bottom: 0.5rem;
@@ -677,5 +707,17 @@ p {
     font-size: 15px;
     color: var(--lys);
     line-height: 1.5rem;
+  }
+  .behandlingtekst {
+    margin: 3rem 5rem;
+  }
+  .grid3 {
+    grid-template-columns: 1fr 1fr;
+    margin: 2rem 5rem;
+    column-gap: 10rem;
+  }
+
+  .price {
+    text-align: right;
   }
 }
