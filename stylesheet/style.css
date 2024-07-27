@@ -366,6 +366,19 @@ p {
   line-height: 1.5rem;
 }
 
+/*--BEHANDLINGER--*/
+.overskrift {
+  background-color: var(--lysbrun);
+  font-size: 40px;
+  padding: 3rem;
+  align-items: center;
+  text-align: center;
+}
+
+.behandlingtekst{
+  margin: 4rem 15rem;
+}
+
 /*------------- MOBIL-------------*/
 @media (max-width: 924px) {
   .social-links {
