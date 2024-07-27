@@ -63,8 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentIndex = 0;
   let startX = 0;
-  let endX = 0;
-  let deltaX = 0;
   let currentTranslateX = 0;
   let prevTranslateX = 0;
 
@@ -93,25 +91,28 @@ document.addEventListener("DOMContentLoaded", () => {
   // Swipe functionality
   carouselImages.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
-    prevTranslateX = currentTranslateX;
+    prevTranslateX = -currentIndex * imageWidth;
+    carouselImages.style.transition = "none";
   });
 
   carouselImages.addEventListener("touchmove", (e) => {
-    endX = e.touches[0].clientX;
-    deltaX = endX - startX;
+    const touchX = e.touches[0].clientX;
+    const deltaX = touchX - startX;
     currentTranslateX = prevTranslateX + deltaX;
     carouselImages.style.transform = `translateX(${currentTranslateX}px)`;
   });
 
   carouselImages.addEventListener("touchend", () => {
     const threshold = imageWidth / 4;
-    if (Math.abs(deltaX) > threshold) {
-      if (deltaX > 0 && currentIndex > 0) {
-        currentIndex--;
-      } else if (deltaX < 0 && currentIndex < imageCount - 1) {
+    const movedBy = startX - currentTranslateX;
+    if (Math.abs(movedBy) > threshold) {
+      if (movedBy > 0 && currentIndex < imageCount - 1) {
         currentIndex++;
+      } else if (movedBy < 0 && currentIndex > 0) {
+        currentIndex--;
       }
     }
+    carouselImages.style.transition = "transform 0.5s ease-in-out";
     updateCarousel();
   });
 
