@@ -379,7 +379,8 @@ p {
   text-align: center;
 }
 
-.behandlingtekst {
+.behandlingtekst,
+.produkttekst {
   margin: 4rem 20rem;
 }
 
@@ -478,6 +479,25 @@ p {
 
 .carousel-next {
   right: 0px;
+}
+
+/*--PRODUKTER--*/
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 5rem;
+  row-gap: 3rem;
+  margin: 0 5rem;
+}
+
+.grid4 img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.grid4 p {
+  font-size: 12.5px;
 }
 
 /*------------- MOBIL-------------*/
@@ -651,7 +671,8 @@ p {
     font-size: 30px;
   }
 
-  .behandlingtekst {
+  .behandlingtekst,
+  .produkttekst {
     margin: 3rem 2rem;
   }
 
@@ -681,6 +702,12 @@ p {
 
   .carousel-images img {
     margin-right: 0;
+  }
+
+  /*--PRODUKTER--*/
+  .grid4 {
+    grid-template-columns: 1fr;
+    margin: 0 2rem;
   }
 }
 
@@ -789,7 +816,8 @@ p {
     color: var(--lys);
     line-height: 1.5rem;
   }
-  .behandlingtekst {
+  .behandlingtekst,
+  .produkttekst {
     margin: 3rem 5rem;
   }
   .grid3 {
@@ -800,5 +828,11 @@ p {
 
   .price {
     text-align: right;
+  }
+
+  /*--PRODUKTER--*/
+
+  .grid4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
