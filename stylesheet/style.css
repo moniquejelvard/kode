@@ -291,6 +291,7 @@ h1 {
   font-size: 80px;
   font-weight: 100;
   color: var(--baggrund);
+  letter-spacing: 1px;
 }
 
 h2 {
@@ -299,6 +300,7 @@ h2 {
   font-size: 30px;
   color: var(--baggrund);
   margin-bottom: 4.5rem;
+  letter-spacing: 1px;
 }
 
 h3 {
@@ -307,6 +309,7 @@ h3 {
   font-size: 15px;
   color: var(--baggrund);
   margin-bottom: 1.5rem;
+  letter-spacing: 1px;
 }
 
 .button {
@@ -352,10 +355,10 @@ h3 {
 
 h4 {
   font-family: "Times New Roman", Times, serif;
-  font-weight: 100;
   font-size: 25px;
   color: var(--lysbrun);
   margin-bottom: 0.5rem;
+  letter-spacing: 1px;
 }
 
 p {
@@ -364,6 +367,7 @@ p {
   font-size: 15px;
   color: var(--lys);
   line-height: 1.5rem;
+  letter-spacing: 1px;
 }
 
 /*--BEHANDLINGER--*/
@@ -374,9 +378,32 @@ p {
   align-items: center;
   text-align: center;
 }
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0 5rem;
+  gap: 3rem;
+}
 
-.behandlingtekst{
+.behandlingtekst {
   margin: 4rem 15rem;
+}
+
+.pris-sektion li {
+  color: var(--lys);
+  font-family: Helvetica, sans-serif;
+  font-size: 15px;
+  margin-bottom: 0.7rem;
+  list-style-type: none;
+  letter-spacing: 1px;
+}
+
+.pris-sektion {
+  margin-bottom: 2rem;
+}
+
+.details {
+  font-style: italic;
 }
 
 /*------------- MOBIL-------------*/
@@ -530,7 +557,7 @@ p {
 
   h4 {
     font-family: "Times New Roman", Times, serif;
-    font-weight: 100;
+    font-weight: 1000;
     font-size: 25px;
     color: var(--lysbrun);
     margin-bottom: 0.5rem;
