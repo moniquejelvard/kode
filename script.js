@@ -65,7 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let startX = 0;
   let endX = 0;
   let deltaX = 0;
-  const threshold = 50; // Minimum distance to recognize as a swipe
+  let currentTranslateX = 0;
+  let prevTranslateX = 0;
 
   function updateCarousel() {
     const offset = -currentIndex * imageWidth;
@@ -92,28 +93,26 @@ document.addEventListener("DOMContentLoaded", () => {
   // Swipe functionality
   carouselImages.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
+    prevTranslateX = currentTranslateX;
   });
 
   carouselImages.addEventListener("touchmove", (e) => {
     endX = e.touches[0].clientX;
-    deltaX = startX - endX;
+    deltaX = endX - startX;
+    currentTranslateX = prevTranslateX + deltaX;
+    carouselImages.style.transform = `translateX(${currentTranslateX}px)`;
   });
 
   carouselImages.addEventListener("touchend", () => {
+    const threshold = imageWidth / 4;
     if (Math.abs(deltaX) > threshold) {
-      if (deltaX > 0) {
-        // Swipe left
-        if (currentIndex < imageCount - 1) {
-          currentIndex++;
-        }
-      } else {
-        // Swipe right
-        if (currentIndex > 0) {
-          currentIndex--;
-        }
+      if (deltaX > 0 && currentIndex > 0) {
+        currentIndex--;
+      } else if (deltaX < 0 && currentIndex < imageCount - 1) {
+        currentIndex++;
       }
-      updateCarousel();
     }
+    updateCarousel();
   });
 
   // Initialize the carousel position
