@@ -678,6 +678,10 @@ p {
   .carousel-container {
     margin: 0 2rem;
   }
+
+  .carousel-images img {
+    margin-right: 0;
+  }
 }
 
 /*-------------TABLET-------------*/

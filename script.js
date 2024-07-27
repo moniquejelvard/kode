@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
   applyLanguage(initialLang);
 });
 
-/*-------GALLERI-------*/
 document.addEventListener("DOMContentLoaded", () => {
   const prevButton = document.querySelector(".carousel-prev");
   const nextButton = document.querySelector(".carousel-next");
@@ -102,16 +101,19 @@ document.addEventListener("DOMContentLoaded", () => {
     carouselImages.style.transform = `translateX(${currentTranslateX}px)`;
   });
 
-  carouselImages.addEventListener("touchend", () => {
+  carouselImages.addEventListener("touchend", (e) => {
+    const endX = e.changedTouches[0].clientX;
+    const deltaX = startX - endX;
     const threshold = imageWidth / 4;
-    const movedBy = startX - currentTranslateX;
-    if (Math.abs(movedBy) > threshold) {
-      if (movedBy > 0 && currentIndex < imageCount - 1) {
+
+    if (Math.abs(deltaX) > threshold) {
+      if (deltaX > 0 && currentIndex < imageCount - 1) {
         currentIndex++;
-      } else if (movedBy < 0 && currentIndex > 0) {
+      } else if (deltaX < 0 && currentIndex > 0) {
         currentIndex--;
       }
     }
+
     carouselImages.style.transition = "transform 0.5s ease-in-out";
     updateCarousel();
   });
