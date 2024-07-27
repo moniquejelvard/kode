@@ -1,3 +1,4 @@
+/*-------BURGERMENU-------*/
 document.addEventListener("DOMContentLoaded", function () {
   const burgerMenu = document.getElementById("burger-menu");
   const nav = document.getElementById("nav");
@@ -7,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     burgerMenu.classList.toggle("toggle");
   });
 
+  /*-------SPROG-------*/
   const languageLinks = document.querySelectorAll(".lang-link");
   const elementsToTranslate = document.querySelectorAll(
     "[data-lang-da], [data-lang-en]"
@@ -46,10 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
   applyLanguage(initialLang);
 });
 
-
-
-
-
+/*-------GALLERI-------*/
 document.addEventListener("DOMContentLoaded", () => {
   const prevButton = document.querySelector(".carousel-prev");
   const nextButton = document.querySelector(".carousel-next");
@@ -63,7 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
   carouselImages.style.width = `${imageWidth * imageCount}px`;
 
   let currentIndex = 0;
-  let startX, endX, deltaX;
+  let startX = 0;
+  let endX = 0;
+  let deltaX = 0;
   const threshold = 50; // Minimum distance to recognize as a swipe
 
   function updateCarousel() {
@@ -118,4 +119,3 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize the carousel position
   updateCarousel();
 });
-
