@@ -46,6 +46,10 @@ document.addEventListener("DOMContentLoaded", function () {
   applyLanguage(initialLang);
 });
 
+
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const prevButton = document.querySelector(".carousel-prev");
   const nextButton = document.querySelector(".carousel-next");
@@ -59,7 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
   carouselImages.style.width = `${imageWidth * imageCount}px`;
 
   let currentIndex = 0;
-  let startX, endX;
+  let startX, endX, deltaX;
+  const threshold = 50; // Minimum distance to recognize as a swipe
 
   function updateCarousel() {
     const offset = -currentIndex * imageWidth;
@@ -88,13 +93,14 @@ document.addEventListener("DOMContentLoaded", () => {
     startX = e.touches[0].clientX;
   });
 
-  carouselImages.addEventListener("touchend", (e) => {
-    endX = e.changedTouches[0].clientX;
-    const diffX = startX - endX;
+  carouselImages.addEventListener("touchmove", (e) => {
+    endX = e.touches[0].clientX;
+    deltaX = startX - endX;
+  });
 
-    if (Math.abs(diffX) > 30) {
-      // Change 30 to your desired sensitivity
-      if (diffX > 0) {
+  carouselImages.addEventListener("touchend", () => {
+    if (Math.abs(deltaX) > threshold) {
+      if (deltaX > 0) {
         // Swipe left
         if (currentIndex < imageCount - 1) {
           currentIndex++;
@@ -112,3 +118,4 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize the carousel position
   updateCarousel();
 });
+
