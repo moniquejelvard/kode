@@ -62,10 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
   carouselImages.style.width = `${imageWidth * imageCount}px`;
 
   let currentIndex = 0;
-  let startX = 0;
-  let endX = 0;
-  let deltaX = 0;
-  const threshold = 50; // Minimum distance to recognize as a swipe
 
   function updateCarousel() {
     const offset = -currentIndex * imageWidth;
@@ -89,29 +85,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Swipe functionality
-  carouselImages.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
+  // Swipe functionality with Hammer.js
+  const hammer = new Hammer(carouselImages);
+  hammer.on("swipeleft", () => {
+    if (currentIndex < imageCount - 1) {
+      currentIndex++;
+      updateCarousel();
+    }
   });
-
-  carouselImages.addEventListener("touchmove", (e) => {
-    endX = e.touches[0].clientX;
-    deltaX = startX - endX;
-  });
-
-  carouselImages.addEventListener("touchend", () => {
-    if (Math.abs(deltaX) > threshold) {
-      if (deltaX > 0) {
-        // Swipe left
-        if (currentIndex < imageCount - 1) {
-          currentIndex++;
-        }
-      } else {
-        // Swipe right
-        if (currentIndex > 0) {
-          currentIndex--;
-        }
-      }
+  hammer.on("swiperight", () => {
+    if (currentIndex > 0) {
+      currentIndex--;
       updateCarousel();
     }
   });
