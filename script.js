@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     burgerMenu.classList.toggle("toggle");
   });
 
-  /*-------GALLERI-------*/
+  /*-------SPROG-------*/
   const languageLinks = document.querySelectorAll(".lang-link");
   const elementsToTranslate = document.querySelectorAll(
     "[data-lang-da], [data-lang-en]"
@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
   applyLanguage(initialLang);
 });
 
+/*-------GALLERI-------*/
 document.addEventListener("DOMContentLoaded", () => {
   const prevButton = document.querySelector(".carousel-prev");
   const nextButton = document.querySelector(".carousel-next");

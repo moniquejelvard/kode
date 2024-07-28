@@ -585,7 +585,7 @@ p {
   color: var(--lys);
 }
 
-.grid5 a:hover {
+.underline:hover {
   text-decoration: underline;
 }
 
@@ -850,6 +850,23 @@ p {
   .grid4 {
     grid-template-columns: 1fr;
     margin: 0 2rem;
+  }
+
+  /*--KONTAKT--*/
+  .grid5 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1.5rem 2rem;
+  }
+
+  .michelle {
+    display: none;
+  }
+
+  .grid6 {
+    grid-template-columns: 1fr;
+    margin: 1.5rem 2rem;
+    gap: 2rem;
   }
 }
 
