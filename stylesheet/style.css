@@ -381,7 +381,8 @@ p {
 
 .behandlingtekst,
 .produkttekst {
-  margin: 4rem 20rem;
+  margin: 2rem 25rem;
+  margin-bottom: 4rem;
 }
 
 .behandlingtekst a {
